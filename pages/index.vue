@@ -88,6 +88,8 @@ export default defineComponent({
             <div class='demo-app-sidebar-section'>
                 <h2>دستور العمل ها</h2>
                 <h3> {{ data }}</h3>
+                <Welcome class="mt-4" />
+
                 <ul>
                     <li>Select dates and you will be prompted to create a new event</li>
                     <li>Drag, drop, and resize events</li>
