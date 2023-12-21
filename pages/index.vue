@@ -83,7 +83,7 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="w-full h-full p-4">
+    <div class="px-[5rem] py-[2rem] h-full">
 
         <FullCalendar class='demo-app-calendar' :options='calendarOptions'>
             <template v-slot:eventContent='arg'>
@@ -95,8 +95,53 @@ export default defineComponent({
 </template>
 
 <style lang='css'>
-.fc {
-    /* the calendar root */
-    margin: 0 auto;
+.fc .fc-toolbar-title {
+    font-size: 1.25rem !important;
+    margin: 0;
+    font-weight: 500;
+    padding: 20px 0 0px 20px;
+}
+
+.fc .fc-button {
+    background-color: #006082 !important;
+    border-color: #006082 !important;
+}
+
+.fc-day-today {
+    background-color: #edf5f7 !important;
+}
+
+.fc-theme-standard td {
+    border: 1px solid #e5e7eb !important;
+}
+
+.fc-day-other {
+    background: #FAFAFB;
+}
+
+.fc .fc-button .fc-icon {
+    font-size: 0.875rem !important;
+}
+
+a.fc-col-header-cell-cushion {
+    font-size: .85em !important;
+    line-height: 2.2rem !important;
+    font-weight: 600 !important;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-direction: inherit !important;
+    padding: 5px !important;
+    font-size: .75em !important;
+    color: #6b7280 !important;
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: #eeeeee !important;
+    color: black !important;
+    border-color: #eeeeee !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    text-transform: capitalize !important;
 }
 </style>

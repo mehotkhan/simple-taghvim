@@ -5,11 +5,11 @@ const toggleSidbarMenu = () => isSidebarOpen.value = !isSidebarOpen.value
 </script>
 <template>
     <div>
-        <div class="flex h-screen overflow-y-hidden bg-white">
+        <div class="flex h-screen overflow-hidden bg-white">
             <!-- Sidebar -->
             <aside
-                class="fixed inset-y-0 z-10 flex flex-col flex-shrink-0 w-64 max-h-screen overflow-hidden transition-all transform bg-gray-100 border-r shadow-lg lg:z-auto lg:static lg:shadow-none"
-                :class="{ '-translate-x-full lg:translate-x-0 lg:w-20': !isSidebarOpen }">
+                class="fixed inset-y-0 z-10 flex flex-col flex-shrink-0 w-[50rem] max-h-screen overflow-hidden transition-all transform bg-gray-100 border-r shadow-lg lg:z-auto lg:static lg:shadow-none"
+                :class="{ '-translate-x-full lg:translate-x-0 lg:w-40': !isSidebarOpen }">
                 <!-- sidebar header -->
                 <div class="flex items-center justify-between flex-shrink-0 p-2"
                     :class="{ 'lg:justify-center': !isSidebarOpen }">
@@ -25,7 +25,7 @@ const toggleSidbarMenu = () => isSidebarOpen.value = !isSidebarOpen.value
                     </button>
                 </div>
                 <!-- Sidebar links -->
-                <nav class="flex-1 overflow-hidden hover:overflow-y-auto">
+                <nav class="flex-1 overflow-hidden  ">
                     <ul class="p-2 overflow-hidden">
                         <li>
                             <a href="#" class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
