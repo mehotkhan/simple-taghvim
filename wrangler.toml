@@ -1,0 +1,4 @@
+[env.development.build]
+command = "NITRO_PRESET=cloudflare bun  build"
+cwd = "./"
+watch_dir = ["./routes", "./nitro.config.ts"]
