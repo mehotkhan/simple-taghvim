@@ -10,11 +10,6 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@fullcalendar/core": "^6.1.10",
-    "@fullcalendar/daygrid": "^6.1.10",
-    "@fullcalendar/interaction": "^6.1.10",
-    "@fullcalendar/timegrid": "^6.1.10",
-    "@fullcalendar/vue3": "^6.1.10",
     "@nuxt/ui": "^2.11.1"
   },
   "devDependencies": {

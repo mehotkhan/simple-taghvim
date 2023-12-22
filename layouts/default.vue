@@ -1,6 +1,6 @@
 <script setup>
 
-const isSidebarOpen = ref(true)
+const isSidebarOpen = ref(false)
 const toggleSidbarMenu = () => isSidebarOpen.value = !isSidebarOpen.value
 </script>
 <template>
@@ -8,13 +8,13 @@ const toggleSidbarMenu = () => isSidebarOpen.value = !isSidebarOpen.value
         <div class="flex h-screen overflow-hidden bg-white">
             <!-- Sidebar -->
             <aside
-                class="fixed inset-y-0 z-10 flex flex-col flex-shrink-0 w-[50rem] max-h-screen overflow-hidden transition-all transform bg-gray-100 border-r shadow-lg lg:z-auto lg:static lg:shadow-none"
-                :class="{ '-translate-x-full lg:translate-x-0 lg:w-40': !isSidebarOpen }">
+                class="fixed inset-y-0 z-10 flex flex-col flex-shrink-0 w-[30rem] max-h-screen overflow-hidden transition-all transform bg-gray-100 border-r shadow-lg lg:z-auto lg:static lg:shadow-none"
+                :class="{ '-translate-x-full lg:translate-x-0 lg:w-20': !isSidebarOpen }">
                 <!-- sidebar header -->
                 <div class="flex items-center justify-between flex-shrink-0 p-2"
                     :class="{ 'lg:justify-center': !isSidebarOpen }">
                     <span class="p-2 text-3xl font-semibold leading-8 tracking-wider uppercase whitespace-nowrap">
-                        گـ<span :class="{ 'lg:hidden': !isSidebarOpen }">ــاه‌نـــامه</span>
+                        گـــ<span :class="{ 'lg:hidden': !isSidebarOpen }">ـاه‌نـــامه</span>
                     </span>
                     <button @click="toggleSidbarMenu()" class="p-2 rounded-md lg:hidden">
                         <svg class="w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -56,7 +56,7 @@ const toggleSidbarMenu = () => isSidebarOpen.value = !isSidebarOpen.value
                             <!-- Toggle sidebar button -->
                             <button @click="toggleSidbarMenu()" class="p-2 rounded-md focus:outline-none focus:ring">
                                 <svg class="w-4 h-4 text-gray-600"
-                                    :class="{ 'transform transition-transform -rotate-180': isSidebarOpen }"
+                                    :class="{ 'transform transition-transform -rotate-180': !isSidebarOpen }"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
