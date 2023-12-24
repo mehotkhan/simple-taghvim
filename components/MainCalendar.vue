@@ -1,6 +1,8 @@
 <script setup>
-const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+import JDate from 'jalali-date'
+
+const MONTH_NAMES = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
+const DAYS = ['شنبه', 'یک‌شنبه', 'دو‌شنبه', 'سه‌شنبه', 'چهارشنبه', 'پنج‌شنبه', 'جمعه'];
 const month = ref('')
 const year = ref('')
 const no_of_days = ref([])
@@ -61,17 +63,17 @@ const themes = ref(
 const openEventModal = ref(false)
 
 const initDate = () => {
-    let today = new Date();
-    month.value = today.getMonth();
+    let today = new JDate()
+
+    month.value = today.getMonth()
     year.value = today.getFullYear();
-    datepickerValue.value = new Date(year.value, month.value, today.getDate()).toDateString();
+    console.log(month.value)
 }
 
 const isToday = (date) => {
     const today = new Date();
-    const d = new Date(year.value, month.value, date);
-
-    return today.toDateString() === d.toDateString() ? true : false;
+    const d = new JDate(year.value, month.value, date + 1);
+    return today.toDateString() === d._d.toDateString() ? true : false;
 }
 const showEventModal = (date) => {
     // open the modal
@@ -79,33 +81,13 @@ const showEventModal = (date) => {
     event_date.value = new Date(year.value, month.value, date).toDateString();
 }
 
-const addEvent = () => {
-    if (!event_title) {
-        return;
-    }
-
-    events.value.push({
-        event_date: event_date,
-        event_title: event_title,
-        event_theme: event_theme
-    });
-
-    console.log(this.events);
-
-    // clear the form data
-    event_title.value = '';
-    event_date.value = '';
-    event_theme.value = 'blue';
-
-    //close the modal
-    openEventModal.value = false;
-}
 
 const getNoOfDays = () => {
     let daysInMonth = new Date(year.value, month.value + 1, 0).getDate();
 
     // find where to start calendar day of week
-    let dayOfWeek = new Date(year.value, month.value).getDay();
+    let dayOfWeek = new JDate(year.value, month.value, 0);
+    console.log(dayOfWeek)
     let blankdaysArray = [];
     for (var i = 1; i <= dayOfWeek; i++) {
         blankdaysArray.push(i);
@@ -130,7 +112,7 @@ onMounted(() => {
 
             <div class="flex items-center justify-between py-2 px-6 border-t border-l border-r rounded-md">
                 <div>
-                    <span class="text-lg font-bold text-gray-800">{{ MONTH_NAMES[month] }}</span>
+                    <span class="text-lg font-bold text-gray-800">{{ MONTH_NAMES[month - 1] }}</span>
                     <span class="ml-1 text-lg text-gray-600 font-normal">{{ year }}</span>
                 </div>
                 <div class="border rounded-lg px-1" style="padding-top: 2px;">
@@ -178,7 +160,7 @@ onMounted(() => {
                             <div @click="showEventModal(date)"
                                 class="inline-flex w-6 h-6 items-center justify-center cursor-pointer text-center leading-none rounded-full transition ease-in-out duration-100"
                                 :class="{ 'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }">
-                                {{ date }}
+                                {{ date + 1 }}
                             </div>
                             <div style="height: 80px;" class="overflow-y-auto mt-1">
                                 <!-- <div 

@@ -8,9 +8,9 @@ const { data } = await useFetch('/api/auth')
 </script>
 
 <template>
-    <div class="px-[5rem] py-[2rem] h-full">
-        <MainCalendar />
-
+    <div class="px-[2rem] py-[1rem] h-full">
+        <!-- <MainCalendar /> -->
+        <FullCalendar />
     </div>
 </template>
 
@@ -63,5 +63,9 @@ a.fc-col-header-cell-cushion {
     font-size: 0.875rem !important;
     line-height: 1.25rem !important;
     text-transform: capitalize !important;
+}
+
+.fc .fc-scrollgrid-liquid {
+    border-radius: 7px !important;
 }
 </style>

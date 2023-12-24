@@ -10,7 +10,12 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.11.1"
+    "@fullcalendar/core": "^6.1.10",
+    "@fullcalendar/vue3": "^6.1.10",
+    "@nuxt/ui": "^2.11.1",
+    "better-sqlite3": "^9.2.2",
+    "drizzle-orm": "^0.29.1",
+    "jalali-date": "^1.1.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
