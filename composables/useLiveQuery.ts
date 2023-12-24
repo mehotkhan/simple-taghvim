@@ -1,5 +1,5 @@
-import { onUnmounted, ref, Ref, watch } from "vue";
 import { liveQuery } from "dexie";
+import { onUnmounted, ref, Ref, watch } from "vue";
 
 interface UseObservableOptions {
   onError?: (err: any) => void;
