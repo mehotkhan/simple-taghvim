@@ -1,3 +1,3 @@
 export default defineEventHandler((event) => {
-    return 'im From server :)'
-})
+  return "im From server :)";
+});
