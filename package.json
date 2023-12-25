@@ -30,7 +30,7 @@
     "@vueuse/nuxt": "10.7.0",
     "@vueuse/rxjs": "^10.7.0",
     "better-sqlite3": "^9.2.2",
-    "drizzle-orm": "^0.29.1",
+    "drizzle-orm": "^0.29.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.8.2",
+    "nuxt": "^3.9.0",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5"
   }
